@@ -41,7 +41,7 @@ const onDragEnd = (result, columns, setColumns) => {
   }
 }
 
-function Fake({onDelete, columnsFromBackend}) {
+function TodoDraggable({onDelete, columnsFromBackend}) {
   const [columns, setColumns] = useState(columnsFromBackend)
   return (
     <div className="app-wrap">
@@ -112,4 +112,4 @@ function Fake({onDelete, columnsFromBackend}) {
   )
 }
 
-export default Fake
+export default TodoDraggable

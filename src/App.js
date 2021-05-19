@@ -9,11 +9,11 @@ function App() {
   const {Title} = Typography
   const {Header, Footer, Content} = Layout
   const [tasks, setTasks] = useState([
-    {id: uuid(), title: "Text1", isCompleted: false},
-    {id: uuid(), title: "Text2", isCompleted: false},
-    {id: uuid(), title: "Text3", isCompleted: false},
-    {id: uuid(), title: "Text4", isCompleted: false},
-    {id: uuid(), title: "Text5", isCompleted: false}
+    {id: uuid(), title: "Text5", isCompleted: false},
+    {id: uuid(), title: "Lorem ipsum, quisque", isCompleted: false},
+    {id: uuid(), title: "Lorem ipsum", isCompleted: false},
+    {id: uuid(), title: "Text3 Text3 Text3", isCompleted: false},
+    {id: uuid(), title: "Text4", isCompleted: false}
   ])
   const columnsFromBackend = useMemo(
     () => ({
@@ -28,25 +28,8 @@ function App() {
     }),
     [tasks]
   )
-  //   const columns = useMemo(() => ({
-  //     active: {
-  //        name: 'Active',
-  //        items: tasks
-  //     },
-  //     completed: {...}
-  //  }), [tasks]);
+  let [isMode, setIsMode] = useState(true)
 
-  // ddddddddddddddddddddddddddddddddddddddddddddddd
-
-  // const itemsFromBackend = [
-  //   {id: uuid(), content: "First task"},
-  //   {id: uuid(), content: "Second task"},
-  //   {id: uuid(), content: "Third task"},
-  //   {id: uuid(), content: "Fourth task"},
-  //   {id: uuid(), content: "Fifth task"}
-  // ]
-
-  let [isMode, setIsMode] = useState(false)
   // Удаление задачи
   const deleteTask = id => {
     setTasks(tasks.filter(task => task.id !== id))
@@ -87,7 +70,7 @@ function App() {
             className={isMode ? "app-btn-classic" : "app-btn-drag"}
             onClick={() => setIsMode((isMode = !isMode))}
           >
-            {isMode ? "DRAGGABLE" : "CLASSIC"}
+            {isMode ? "CLASSIC" : "DRAGGABLE"}
             <SyncOutlined className={isMode ? "mode" : "not-mode"} />
           </Button>
         </Title>
