@@ -18,11 +18,11 @@ function App() {
   const columnsFromBackend = useMemo(
     () => ({
       [uuid()]: {
-        name: "Active",
+        name: "Активные",
         items: tasks
       },
       [uuid()]: {
-        name: "Completed",
+        name: "Выполненные",
         items: []
       }
     }),
